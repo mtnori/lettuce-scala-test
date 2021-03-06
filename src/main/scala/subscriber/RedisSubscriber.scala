@@ -1,3 +1,5 @@
+package subscriber
+
 import com.typesafe.scalalogging.StrictLogging
 import io.lettuce.core.RedisClient
 

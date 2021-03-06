@@ -1,11 +1,13 @@
+package publisher
+
 import com.typesafe.scalalogging.StrictLogging
 import io.lettuce.core.RedisClient
 import reactor.core.scala.publisher.{SFlux => Flux}
 import reactor.core.scheduler.Schedulers
 
-import scala.util.{Try, Using}
 import scala.concurrent.duration._
 import scala.language.postfixOps
+import scala.util.{Try, Using}
 
 class RedisPublisher extends StrictLogging {
   def publish(): Try[Unit] = {
@@ -32,6 +34,6 @@ class RedisPublisher extends StrictLogging {
 }
 
 object RedisPublisher extends App {
-  val publisher = new RedisPublisher
+  val publisher = new RedisPublisher()
   publisher.publish()
 }
